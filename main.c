@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include "SPBufferset.h"
-#include <math.h>
 
 
 int main(){
@@ -75,7 +74,7 @@ void isValidChar(char numInput, int originBase){
 	/*first checks for bases below 10*/
 	if(originBase < 10){
 		numInputVal = numInput - '0';
-		 if((numInputVal >= originBase) && (numInputVal >= 0)){
+		 if((numInputVal >= originBase) || (numInputVal < 0)){
 			 printf("Invalid number!\n");
 			 exit(0);
 		 }
@@ -87,7 +86,7 @@ void isValidChar(char numInput, int originBase){
 		}else{
 			numInputVal = numInput - '0';
 		}
-		if((numInputVal >= originBase) && (numInputVal < 0)){
+		if((numInputVal >= originBase) || (numInputVal < 0)){
 			 printf("Invalid number!\n");
 			 exit(0);
 		}
